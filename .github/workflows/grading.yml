@@ -9,6 +9,10 @@ jobs:
   grade-learner:
     if: github.event_name == 'push' # Apply additional filters as needed
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript', 'python']
     steps:
       - uses: actions/checkout@v2
 
